@@ -1,6 +1,7 @@
-<span class="actions">
-  <i class="fa fa-pencil" aria-hidden="true" (click)="editContent(content)" data-toggle="modal" data-target="#editContent"></i>
+<ng-content *ngIf="!default"></ng-content>
+<span class="actions" *ngIf="default">
+  <i class="fa fa-{{editIcon}}" aria-hidden="true" (click)="editContent(content)"></i>
 </span>
-<span>
-  <i class="fa fa-trash" aria-hidden="true" (click)="deleteContent(content)"></i>
+<span *ngIf="default">
+  <i class="fa fa-{{deleteIcon}}" aria-hidden="true" (click)="deleteContent(content)"></i>
 </span>
